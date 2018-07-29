@@ -389,7 +389,18 @@
           </execution>
         </executions>
       </plugin>
-    </plugins>
+    <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+              <format>xml</format>
+              <maxmem>256m</maxmem>
+              <!-- aggregated reports for multi-module projects -->
+              <aggregate>true</aggregate>
+          </configuration>
+         </plugin>
+        </plugins>
 
     <pluginManagement>
       <plugins>
@@ -511,6 +522,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${vers.maven-surefire-plugin}</version>
           <configuration>
+<testFailureIgnore>true</testFailureIgnore>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
             <!-- to debug class loading, add -verbose:class -->
             <!-- Downgrading to IPv4 due to these ZK issues-->
@@ -636,7 +648,18 @@
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${vers.maven-assembly-plugin}</version>
         </plugin>
-      </plugins>
+      <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+              <format>xml</format>
+              <maxmem>256m</maxmem>
+              <!-- aggregated reports for multi-module projects -->
+              <aggregate>true</aggregate>
+          </configuration>
+         </plugin>
+        </plugins>
     </pluginManagement>
   </build>
 
@@ -715,7 +738,18 @@
           </reportSet>
         </reportSets>
       </plugin>
-    </plugins>
+    <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+              <format>xml</format>
+              <maxmem>256m</maxmem>
+              <!-- aggregated reports for multi-module projects -->
+              <aggregate>true</aggregate>
+          </configuration>
+         </plugin>
+        </plugins>
   </reporting>
 
   <dependencyManagement>
@@ -1144,7 +1178,18 @@
                 </execution>
               </executions>
             </plugin>
-          </plugins>
+          <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+              <format>xml</format>
+              <maxmem>256m</maxmem>
+              <!-- aggregated reports for multi-module projects -->
+              <aggregate>true</aggregate>
+          </configuration>
+         </plugin>
+        </plugins>
         </pluginManagement>
       </build>
     </profile>
@@ -1167,6 +1212,17 @@
               </execution>
             </executions>
           </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.7</version>
+          <configuration>
+              <format>xml</format>
+              <maxmem>256m</maxmem>
+              <!-- aggregated reports for multi-module projects -->
+              <aggregate>true</aggregate>
+          </configuration>
+         </plugin>
         </plugins>
       </build>
     </profile>
